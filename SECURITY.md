@@ -10,4 +10,5 @@ GitHub issues or pull requests for security reports.
 
 What the project treats as in scope and out of scope, the security
 properties it provides and disclaims, the adversary model, and how
-findings are triaged are documented in [THREAT_MODEL.md](site/_docs/security_threat_model.md).
+findings are triaged are documented in the
+[threat model](site/_docs/security_threat_model.md).

@@ -47,7 +47,6 @@ Companion documents:
   Calcite, the two documents divide responsibility: Avatica owns the
   wire; Calcite owns the query engine.
 
-**Status:** draft for PMC discussion; not yet ratified.
 
 * TOC
 {:toc}
@@ -198,9 +197,10 @@ carve-out below. A report that reaches a sink not covered here is a model gap
    credential.
 7. **Denial of service by a single wire frame** — a single request
    parseable within stated size limits should not be able to exhaust
-   server resources. Combinatorial or unbounded resource consumption
-   from a single frame is a vulnerability (see also [Denial of
-   service](#denial-of-service) for known limitations).
+   server resources, except where [Denial of service](#denial-of-service)
+   records the bound as not yet landed. Combinatorial or unbounded resource
+   consumption from a single frame is a vulnerability (see also
+   [Denial of service](#denial-of-service) for known limitations).
 
 ## Not a vulnerability
 
@@ -378,9 +378,8 @@ vulnerability.
 
 ## Historical CVEs
 
-Avatica has published two CVEs relevant to this model. Both are
-fixed in current releases; they are noted here as ground truth for
-the rule they establish.
+Avatica has published these CVEs relevant to this model, fixed in current releases;
+they are noted here as ground truth for the rule they establish.
 
 * **CVE-2022-36364** — an untrusted URL supplied to the Avatica
   JDBC driver could load an arbitrary `httpclient_impl` class via
@@ -388,9 +387,6 @@ the rule they establish.
   `asSubclass(AvaticaHttpClient.class)` check that is now present in
   `AvaticaHttpClientFactoryImpl`. Established the surprising-class-
   loading rule for client-side connection properties.
-* **CVE-2020-13955** — a Calcite Avatica issue in an earlier
-  release. Fixed upstream; noted here as a reminder that the wire
-  boundary is a real attack surface, not a hypothetical one.
 
 ## Triage dispositions
 
