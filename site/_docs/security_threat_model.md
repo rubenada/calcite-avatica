@@ -29,6 +29,10 @@ is supported), and a client-side JDBC driver that speaks the Avatica
 wire protocol over HTTP or HTTPS. This threat model covers what an
 attacker who reaches an Avatica server over the wire, or who tricks an
 Avatica client into connecting to a server, can and cannot do.
+This model covers the Java server and the Java (JDBC) client in this
+repository. `apache/calcite-avatica-go`
+is a separate implementation that speaks the same wire protocol; it
+is not covered here and would need its own model.
 
 Avatica treats the behaviors below as security vulnerabilities, so that
 reporters and committers triage them the same way. A report that
